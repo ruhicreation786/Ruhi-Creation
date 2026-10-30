@@ -1,7 +1,7 @@
 # Abyaz Ka Dino Sapna: Instagram Reel Pack
 
 Video: `Abyaz_Ka_Dino_Sapna_phone.mp4` (1:59, 720x1280, 9:16)
-Cover: `cover.jpg` (1080x1920, built from the 0:55 frame of Abyaz flying on the pterodactyl, eyes open, face unedited)
+Cover: `cover.jpg` (1080x1920, built from the 0:55 frame of Abyaz flying on the pterodactyl, eyes open, face unedited, with the credit "Video created by Ruhi Creation Films")
 
 ---
 
@@ -61,7 +61,11 @@ Happy 6th Birthday, Abyaz. May every dream be this big. 🎂💚
 👇 Drop a birthday wish for Abyaz in the comments!
 ```
 
-Optional last line: `Video by @ruhicreation` (replace with your handle).
+Last line of the caption (keep it):
+
+```
+🎬 Video created by Ruhi Creation Films
+```
 
 ---
 

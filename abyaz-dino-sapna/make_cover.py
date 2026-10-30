@@ -6,8 +6,8 @@ img=Image.open('frame_0m55s.jpg').convert('RGB').resize((W,H),Image.LANCZOS)
 F='LuckiestGuy.ttf'
 # soft dark gradient behind the title for readability
 grad=Image.new('L',(W,H),0); g=ImageDraw.Draw(grad)
-for y in range(1080,1700):
-    a=int(170*min(1,(y-1080)/200)) if y<1600 else int(170*max(0,(1700-y)/100))
+for y in range(1080,1720):
+    a=int(170*min(1,(y-1080)/200)) if y<1600 else int(170*max(0,(1720-y)/120))
     g.line([(0,y),(W,y)],fill=a)
 img=Image.composite(Image.new('RGB',(W,H),(20,12,30)),img,grad)
 d=ImageDraw.Draw(img)
@@ -29,6 +29,8 @@ d.text((W/2-w/2,by0+18),s,font=f,fill=(90,40,10))
 # title
 text(W/2,1150,"ABYAZ KA",150,(255,255,255),12,(30,70,30))
 text(W/2,1305,"DINO SAPNA",150,(255,205,50),12,(110,40,10))
+# credit line
+text(W/2,1612,"VIDEO CREATED BY RUHI CREATION FILMS",40,(255,255,255),5,(40,20,10))
 img.save('cover.jpg',quality=95)
 # grid preview (3:4 centre crop as shown on profile)
 img.crop((0,240,1080,1680)).resize((540,720)).save('grid_preview.jpg',quality=90)
