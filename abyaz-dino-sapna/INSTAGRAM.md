@@ -1,7 +1,7 @@
 # Abyaz Ka Dino Sapna: Instagram Reel Pack
 
 Video: `Abyaz_Ka_Dino_Sapna_phone.mp4` (1:59, 720x1280, 9:16)
-Cover: `cover.jpg` (1080x1920, built from the 0:58 frame of Abyaz flying on the pterodactyl)
+Cover: `cover.jpg` (1080x1920, built from the 0:55 frame of Abyaz flying on the pterodactyl, eyes open, face unedited)
 
 ---
 
