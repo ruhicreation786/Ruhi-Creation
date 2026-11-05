@@ -1,0 +1,10 @@
+<resources>
+    <color name="blue">#1A6DFF</color>
+    <color name="blue_dark">#0B4FD1</color>
+    <color name="bg">#F3F6FC</color>
+    <color name="card">#FFFFFF</color>
+    <color name="text">#0F1B33</color>
+    <color name="muted">#5B6887</color>
+    <color name="border">#DBE3F3</color>
+    <color name="error">#D93636</color>
+</resources>
