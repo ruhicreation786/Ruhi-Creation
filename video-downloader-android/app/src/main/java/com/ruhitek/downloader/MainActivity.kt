@@ -55,7 +55,7 @@ class MainActivity : AppCompatActivity() {
     )
 
     private val supported = Regex(
-        "https?://([a-z0-9-]+\\.)*(youtube\\.com|youtu\\.be|instagram\\.com|facebook\\.com|fb\\.watch|fb\\.com)/\\S*",
+        "https?://([a-z0-9-]+\\.)*(youtube\\.com|youtu\\.be|instagram\\.com|facebook\\.com|fb\\.watch|fb\\.com|pinterest\\.[a-z.]+|pin\\.it)/\\S*",
         RegexOption.IGNORE_CASE
     )
 
@@ -138,7 +138,7 @@ class MainActivity : AppCompatActivity() {
         if (busy) return
         val url = extractUrl(urlInput.text.toString().trim())
         if (url == null) {
-            showError("Please paste a YouTube, Instagram or Facebook video link.")
+            showError("Please paste a YouTube, Instagram, Facebook or Pinterest video link.")
             return
         }
         showError(null)

@@ -32,7 +32,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="6dp"
                 android:alpha="0.9"
-                android:text="Paste a YouTube, Instagram or Facebook link, or share it here from the app."
+                android:text="Paste a YouTube, Instagram, Facebook or Pinterest link, or share it here from the app."
                 android:textColor="#FFFFFF"
                 android:textSize="15sp" />
         </LinearLayout>

@@ -43,7 +43,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          TAG="downloader-v1.0-build${{ github.run_number }}"
+          TAG="downloader-v1.1-build${{ github.run_number }}"
           gh release create "$TAG" RuhiTek-Downloader.apk \
             --target "${{ github.sha }}" \
             --title "RuhiTek Video Downloader (build ${{ github.run_number }})" \
