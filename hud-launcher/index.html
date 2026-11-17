@@ -176,10 +176,15 @@
   Object.entries(icons).forEach(([k, d]) => {
     const b = document.createElement("div"); b.className = "app";
     b.innerHTML = `<svg viewBox="0 0 24 24">${d}</svg><em>${k}</em>`;
-    b.onclick = () => { toast("LAUNCH " + k); say("Opening " + k.toLowerCase() + "."); };
+    b.onclick = () => { toast("LAUNCH " + k); say("Opening " + k.toLowerCase() + "."); nativeLaunch(k); };
     $("#apps").appendChild(b);
   });
-  document.querySelectorAll(".dock [data-act]").forEach(b => b.onclick = () => toast("LAUNCH " + b.dataset.act));
+  document.querySelectorAll(".dock [data-act]").forEach(b => b.onclick = () => { toast("LAUNCH " + b.dataset.act); nativeLaunch(b.dataset.act); });
+
+  // ---- native bridge (only present inside the Android app) ----
+  const hasNative = !!(window.Android && window.Android.launch);
+  function nativeLaunch(name){ if (hasNative) window.Android.launch(name); }
+  window.onVoice = text => { stop(); say(reply(text)); };
 
   // ---- helpers ----
   const toastEl = $("#toast"); let tt;
@@ -230,6 +235,7 @@
   }
   function start(){
     $("#screen").classList.add("listening"); mic.classList.add("hot"); amp = 3; say("Listening...");
+    if (hasNative) { window.Android.listen(); return; }
     if (!SR) { setTimeout(() => say("Speech input is not supported in this browser."), 700); return; }
     rec = new SR(); rec.lang = "en-US"; rec.interimResults = false;
     rec.onresult = e => say(reply(e.results[0][0].transcript));
@@ -239,7 +245,7 @@
   function stop(){ $("#screen").classList.remove("listening"); mic.classList.remove("hot"); amp = 1; try { rec && rec.stop(); } catch(_){} }
   [mic, core].forEach(el => {
     el.addEventListener("pointerdown", e => { e.preventDefault(); start(); });
-    ["pointerup","pointerleave","pointercancel"].forEach(ev => el.addEventListener(ev, stop));
+    if (!hasNative) ["pointerup","pointerleave","pointercancel"].forEach(ev => el.addEventListener(ev, stop));
   });
 })();
 </script>
